@@ -147,6 +147,7 @@
   .gradient-text {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-accent);
+    filter: brightness(150%);
   }
 
   /* Hero gradient background */

@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from "@/assets/sastraism-logo.png"
+import tcs_logo from "@/assets/logos/tcs_logo.jpg"
+import sastra_logo from "@/assets/logos/sastra_logo.png"
+
 
 /* ------------------ HERO SLIDES ------------------ */
 const heroSlides = [
@@ -113,11 +116,19 @@ export const HeroSection = () => {
           <motion.div
             variants={fadeUp}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
           >
-            <span className="text-sm text-muted-foreground">
-              Funded by TCS Foundation | TATA × SASTRA Deemed to be University
-            </span>
+            <img
+              src={tcs_logo}
+              alt={`tcs logo`}
+              className="w-auto h-16 object-contain drop-shadow-xl transform group-hover:scale-110 transition-transform duration-500"
+            />
+            <img
+              src={sastra_logo}
+              alt={`sastra logo`}
+              className="w-auto h-16 object-contain drop-shadow-xl transform group-hover:scale-110 transition-transform duration-500"
+            />
+
           </motion.div>
 
           {/* Main Headline */}
@@ -125,12 +136,12 @@ export const HeroSection = () => {
             variants={fadeUp}
             transition={{ duration: 0.9 }}
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-          > 
+          >
             <div className='flex flex-col justify-center gap-5 items-center flex-grow md:flex-row'>
-            <img src={Logo} className="flex h-24 w-auto"/>
-            <span className="flex text-foreground">SASTRA AI</span>
+              <img src={Logo} className="flex h-32 w-auto" />
+              <span className="flex gradient-text text-9xl">SARADHI AI</span>
             </div>
-            <span className="gradient-text">Samudra Mathanam</span>
+            {/* <span className="gradient-text">Samudra Mathanam</span> */}
           </motion.h1>
 
           {/* Carousel */}
@@ -168,11 +179,10 @@ export const HeroSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    index === currentSlide
+                  className={`h-2 rounded-full transition-all ${index === currentSlide
                       ? 'w-8 bg-secondary'
                       : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -192,10 +202,10 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a href="/platforms">
-            <Button variant="hero" size="xl" className="group">
-              Explore TARA Platform
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+              <Button variant="hero" size="xl" className="group">
+                Explore TARA & SARA Platform
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
             </a>
             {/* <Button variant="heroOutline" size="xl">
               Research & Deployment

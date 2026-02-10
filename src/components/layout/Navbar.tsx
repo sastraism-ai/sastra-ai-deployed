@@ -95,7 +95,7 @@ export const Navbar = () => {
 
             <button onClick={() => navigate('/platforms')}>
               <Button variant="hero" size="sm">
-                Explore TARA
+                Explore our Platforms
               </Button>
             </button>
           </div>
