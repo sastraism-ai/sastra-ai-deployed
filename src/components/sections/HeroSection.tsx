@@ -5,12 +5,13 @@ import { Button } from '@/components/ui/button';
 import Logo from "@/assets/sastraism-logo.png"
 import tcs_logo from "@/assets/logos/tcs_logo.jpg"
 import sastra_logo from "@/assets/logos/sastra_logo.png"
+import tata_logo from "@/assets/logos/tata_logo.jpg"
 
 
 /* ------------------ HERO SLIDES ------------------ */
 const heroSlides = [
   {
-    title: 'Institutional AI Foundry',
+    title: 'Bringing next-gen AI technologies to classrooms',
     description:
       'Building enterprise-grade AI systems for education, assessment, and institutional deployment at TRL-6+ maturity.',
   },
@@ -126,6 +127,11 @@ export const HeroSection = () => {
             <img
               src={sastra_logo}
               alt={`sastra logo`}
+              className="w-auto h-16 object-contain drop-shadow-xl transform group-hover:scale-110 transition-transform duration-500"
+            />
+            <img
+              src={tata_logo}
+              alt={`tata logo`}
               className="w-auto h-16 object-contain drop-shadow-xl transform group-hover:scale-110 transition-transform duration-500"
             />
 
