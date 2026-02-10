@@ -125,13 +125,13 @@ export const HeroSection = () => {
               className="w-auto h-16 object-contain drop-shadow-xl transform group-hover:scale-110 transition-transform duration-500"
             />
             <img
-              src={sastra_logo}
-              alt={`sastra logo`}
+              src={tata_logo}
+              alt={`tata logo`}
               className="w-auto h-16 object-contain drop-shadow-xl transform group-hover:scale-110 transition-transform duration-500"
             />
             <img
-              src={tata_logo}
-              alt={`tata logo`}
+              src={sastra_logo}
+              alt={`sastra logo`}
               className="w-auto h-16 object-contain drop-shadow-xl transform group-hover:scale-110 transition-transform duration-500"
             />
 
