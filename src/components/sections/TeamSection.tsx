@@ -6,6 +6,9 @@ import pic_2 from "@/assets/team/brindha_gr.jpg"
 import pic_3 from "@/assets/team/jayavardhan.jpeg"
 import pic_4 from "@/assets/team/ananthapavan.jpeg"
 import pic_5 from "@/assets/team/nikil_ps.jpeg"
+import pic_6 from "@/assets/team/maddula_vivek.jpeg"
+import pic_7 from "@/assets/team/devarakonda_satyasai_yellayya.jpeg"
+
 
 
 const teamMembers = [
@@ -27,15 +30,23 @@ const teamMembers = [
   },
   {
     name: 'Sangam Jayavardhan Reddy',
-    role: 'Lead Intern (AI Engineer)',
+    role: 'Lead Intern (AI Engineer) (TARA)',
     expertise: 'B Tech - Robotics and AI (IV Year)',
     image: pic_3,
     linkedin_url: "https://www.linkedin.com/in/sangam-jayavardhan-reddy-a685a2250/",
     mail_id: "126179037@sastra.ac.in"
   },
   {
+    name: 'Maddula Vivek',
+    role: 'Lead Intern (AI Engineer) (SARA)',
+    expertise: 'B Tech CSE-AI&DS (IV Year)',
+    image: pic_6,
+    linkedin_url: "https://www.linkedin.com/in/vivekmaddula311810/",
+    mail_id: ""
+  },
+  {
     name: 'Challagandla Anantha Pavan',
-    role: 'Intern (AI Engineer)',
+    role: 'Intern (AI Engineer) (TARA)',
     expertise: 'B Tech - Robotics and AI (IV Year)',
     image: pic_4,
     linkedin_url: "https://www.linkedin.com/in/anantha-pavan-challagandla-b88200348/",
@@ -43,11 +54,19 @@ const teamMembers = [
   },
   {
     name: 'Nikil PS',
-    role: 'Intern (Full Stack Developer)',
+    role: 'Intern (Full Stack Developer) (TARA)',
     expertise: 'B Tech - Robotics and AI (II Year)',
     image: pic_5,
     linkedin_url: "https://www.linkedin.com/in/nikil-sukumar",
     mail_id: "128179038@sastra.ac.in"
+  },
+  {
+    name: 'Devarakonda Satyasai Yellayya Venkata Ramarao',
+    role: 'Intern (AI Engineer) (SARA)',
+    expertise: 'B Tech CSE-AI&DS (III Year)',
+    image: pic_7,
+    linkedin_url: "",
+    mail_id: "127018011@sastra.ac.in"
   },
 ];
 
@@ -55,7 +74,7 @@ export const TeamSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const controls = useAnimation();
-  
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [isPaused, setIsPaused] = useState(false);
@@ -124,7 +143,7 @@ export const TeamSection = () => {
   return (
     <section id="team" className="py-24 lg:py-32 relative overflow-hidden" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -141,20 +160,20 @@ export const TeamSection = () => {
         </motion.div>
 
         {/* Carousel Wrapper */}
-        <div 
+        <div
           className="relative max-w-7xl mx-auto"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Controls */}
-          <button 
+          <button
             onClick={() => setCurrentIndex(prev => prev - 1)}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-20 p-3 rounded-full glass-card hover:bg-secondary/20 hover:text-white transition-all group border border-white/10"
           >
             <ChevronLeft className="w-6 h-6 text-muted-foreground group-hover:text-white" />
           </button>
 
-          <button 
+          <button
             onClick={() => setCurrentIndex(prev => prev + 1)}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-20 p-3 rounded-full glass-card hover:bg-secondary/20 hover:text-white transition-all group border border-white/10"
           >
@@ -163,20 +182,20 @@ export const TeamSection = () => {
 
           {/* Mask / Viewport */}
           <div className="overflow-hidden py-10 -my-10"> {/* Padding to prevent shadow cutting */}
-            <motion.div 
+            <motion.div
               className="flex"
               animate={controls}
             >
               {extendedMembers.map((member, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="flex-shrink-0 px-3"
                   style={{ width: `${100 / itemsPerPage}%` }}
                 >
                   <div className="glass-card p-6 h-full flex flex-col items-center justify-between group hover:-translate-y-2 hover:shadow-[0_0_30px_-5px_rgba(var(--secondary-rgb),0.3)] transition-all duration-300">
                     <div>
                       <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center mb-6 group-hover:from-secondary/50 group-hover:to-accent/50 transition-all p-[2px]">
-                        <img src={member.image} className='w-full h-full rounded-full object-cover bg-background' alt={member.name}/>
+                        <img src={member.image} className='w-full h-full rounded-full object-cover bg-background' alt={member.name} />
                       </div>
                       <h3 className="font-display font-semibold text-lg text-center mb-1">{member.name}</h3>
                       <p className="text-secondary text-sm text-center mb-3 font-medium">{member.role}</p>
@@ -184,10 +203,10 @@ export const TeamSection = () => {
                     </div>
 
                     <div className="flex gap-3">
-                      <a href={member.linkedin_url} className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-muted-foreground hover:text-white transition-colors">
+                      <a href={member.linkedin_url} className={`${member.linkedin_url?`flex`:`hidden`} p-2 rounded-full bg-white/5 hover:bg-white/10 text-muted-foreground hover:text-white transition-colors`}>
                         <Linkedin className="w-4 h-4" />
                       </a>
-                      <a href={`mailto:${member.mail_id}`} className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-muted-foreground hover:text-white transition-colors">
+                      <a href={`mailto:${member.mail_id}`} className={`${member.mail_id?`flex`:`hidden`} p-2 rounded-full bg-white/5 hover:bg-white/10 text-muted-foreground hover:text-white transition-colors`}>
                         <Mail className="w-4 h-4" />
                       </a>
                     </div>
@@ -203,11 +222,10 @@ export const TeamSection = () => {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(startIndex + idx)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  (currentIndex % teamMembers.length) === idx
-                    ? 'w-8 bg-secondary' 
-                    : 'w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${(currentIndex % teamMembers.length) === idx
+                  ? 'w-8 bg-secondary'
+                  : 'w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
               />
             ))}
           </div>
